@@ -23,6 +23,7 @@ void s3BRSSI(int rssi, uint8_t* transmitterAddress);
 void parseBytes(const char* str, char sep, uint8_t* bytes, int maxBytes, int base);
 
 void setup() {
+  Serial.begin(115200);
   module.init();
   module.receiveDataCallback(s3BReceiver);
   module.rssiUpdateCallback(s3BRSSI);
