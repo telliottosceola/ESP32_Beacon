@@ -34,6 +34,7 @@ void setup() {
 
 void loop() {
   if(millis() > lastBeacon + beaconInterval){
+    Serial.println("Transmitting");
     lastBeacon = millis();
     module.transmit(destinationAddress,transmitData,2);
   }
